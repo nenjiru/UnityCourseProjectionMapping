@@ -6,10 +6,28 @@ public class SyncPosition : MonoBehaviour
     [SerializeField]
     Transform _target = null;
 
+    [SerializeField]
+    bool useSyncPosition = false;
+
+    [SerializeField]
+    bool useSyncRotation = false;
+
+    [SerializeField]
+    bool useSyncScale = false;
+
     void Update()
     {
-        transform.localPosition = _target.localPosition;
-        transform.localRotation = _target.localRotation;
-        transform.localScale = _target.localScale;
+        if (useSyncPosition == true)
+        {
+            transform.localPosition = _target.localPosition;
+        }
+        if (useSyncRotation == true)
+        {
+            transform.localRotation = _target.localRotation;
+        }
+        if (useSyncScale == true)
+        {
+            transform.localScale = _target.localScale;
+        }
     }
 }
